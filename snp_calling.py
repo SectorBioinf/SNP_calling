@@ -113,7 +113,7 @@ def bwa_mem(input_files, output_dir, index_ref_file):
             os.makedirs(output_dir, exist_ok=True)
 
             input_file_R1 = os.path.join(input_files, file_name) #Создание полного пути к файлу R1
-            input_file_R2 = os.path.join(input_files, file_name.replace("_R1_001.fastq.gz", "_R2_001.fastq.gz"))
+            input_file_R2 = os.path.join(input_files, file_name.replace("_R1.fastq.gz", "_R2.fastq.gz"))
             file_pair = (input_file_R1, input_file_R2)
 
             if file_pair not in processed_pairs: #Проверка, была ли эта пара файлов уже обработана
@@ -139,7 +139,7 @@ def bwa_mem2(input_files, output_dir, index_ref_file):
             os.makedirs(output_dir, exist_ok=True)
 
             input_file_R1 = os.path.join(input_files, file_name) #Создание полного пути к файлу R1
-            input_file_R2 = os.path.join(input_files, file_name.replace("_R1_001.fastq.gz", "_R2_001.fastq.gz"))
+            input_file_R2 = os.path.join(input_files, file_name.replace("_R1.fastq.gz", "_R2.fastq.gz"))
             file_pair = (input_file_R1, input_file_R2)
 
             if file_pair not in processed_pairs: #Проверка, была ли эта пара файлов уже обработана
@@ -169,7 +169,7 @@ def minimap2(input_files, output_dir, index_ref_file):
             os.makedirs(output_dir, exist_ok=True)
 
             input_file_R1 = os.path.join(input_files, file_name) #Создание полного пути к файлу R1
-            input_file_R2 = os.path.join(input_files, file_name.replace("_R1_001.fastq.gz", "_R2_001.fastq.gz"))
+            input_file_R2 = os.path.join(input_files, file_name.replace("_R1.fastq.gz", "_R2.fastq.gz"))
             file_pair = (input_file_R1, input_file_R2)
 
             if file_pair not in processed_pairs: #Проверка, была ли эта пара файлов уже обработана
@@ -197,7 +197,7 @@ def bowtie2(input_files, output_dir, index_ref_file):
             os.makedirs(output_dir, exist_ok=True)
 
             input_file_R1 = os.path.join(input_files, file_name) #Создание полного пути к файлу R1
-            input_file_R2 = os.path.join(input_files, file_name.replace("_R1_001.fastq.gz", "_R2_001.fastq.gz"))
+            input_file_R2 = os.path.join(input_files, file_name.replace("_R1.fastq.gz", "_R2.fastq.gz"))
             file_pair = (input_file_R1, input_file_R2)
 
             if file_pair not in processed_pairs: #Проверка, была ли эта пара файлов уже обработана
