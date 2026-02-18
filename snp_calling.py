@@ -255,7 +255,7 @@ def alignment_quality(bam_dir):
                 input_file = os.path.join(bam_dir, file_name)
 
                 # Команды для выполнения
-                command_depth = f"export LC_ALL=C && samtools depth {input_file} | awk '{{if($3 >= 8) covered++}} END {{print (covered/NR)*100}}'"
+                command_depth = f"export LC_ALL=C && samtools depth -a -b '/путь/к/Exome.bed' {input_file} | awk '{{if($3 >= 8) covered++}} END {{print (covered/NR)*100}}'"
                 command_avg_depth = f"export LC_ALL=C && samtools depth {input_file} | awk '{{sum+=$3}} END {{print sum/NR}}'"
                 command_flagstat = f"export LC_ALL=C && samtools flagstat {input_file} | grep 'mapped (' | head -n 1 | awk '{{print $1, $5\")\"}}'"
                 command_quality_avg = f"export LC_ALL=C && samtools view {input_file} | cut -f 5 | awk '{{sum += $1; count++}} END {{print sum / count}}'"
